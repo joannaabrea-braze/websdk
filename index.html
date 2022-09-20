@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<title>Joanna OKR Project
+		</title>
+		<style>
+			.header {
+				padding: 20px;
+				text-align: center;
+				background: #03b2c9;
+				color: white;
+				font-size: 20px;
+			}
+			p {
+				margin-left: 200px;
+				margin-right:  200px;
+			}
+			h3 {
+				margin-left: 200px;
+				margin-right:  200px;
+			}
+			hr {
+				margin-left: 200px;
+				margin-right:  200px;
+			}
+		</style>
+		<script type="text/javascript" src="service-worker.js"></script>
+		<script type="text/javascript">
+		  +function(a,p,P,b,y){a.braze={};a.brazeQueue=[];for(var s="BrazeSdkMetadata DeviceProperties Card Card.prototype.dismissCard Card.prototype.removeAllSubscriptions Card.prototype.removeSubscription Card.prototype.subscribeToClickedEvent Card.prototype.subscribeToDismissedEvent Card.fromContentCardsJson Banner CaptionedImage ClassicCard ControlCard ContentCards ContentCards.prototype.getUnviewedCardCount Feed Feed.prototype.getUnreadCardCount ControlMessage InAppMessage InAppMessage.SlideFrom InAppMessage.ClickAction InAppMessage.DismissType InAppMessage.OpenTarget InAppMessage.ImageStyle InAppMessage.Orientation InAppMessage.TextAlignment InAppMessage.CropType InAppMessage.prototype.closeMessage InAppMessage.prototype.removeAllSubscriptions InAppMessage.prototype.removeSubscription InAppMessage.prototype.subscribeToClickedEvent InAppMessage.prototype.subscribeToDismissedEvent InAppMessage.fromJson FullScreenMessage ModalMessage HtmlMessage SlideUpMessage User User.Genders User.NotificationSubscriptionTypes User.prototype.addAlias User.prototype.addToCustomAttributeArray User.prototype.addToSubscriptionGroup User.prototype.getUserId User.prototype.incrementCustomUserAttribute User.prototype.removeFromCustomAttributeArray User.prototype.removeFromSubscriptionGroup User.prototype.setCountry User.prototype.setCustomLocationAttribute User.prototype.setCustomUserAttribute User.prototype.setDateOfBirth User.prototype.setEmail User.prototype.setEmailNotificationSubscriptionType User.prototype.setFirstName User.prototype.setGender User.prototype.setHomeCity User.prototype.setLanguage User.prototype.setLastKnownLocation User.prototype.setLastName User.prototype.setPhoneNumber User.prototype.setPushNotificationSubscriptionType InAppMessageButton InAppMessageButton.prototype.removeAllSubscriptions InAppMessageButton.prototype.removeSubscription InAppMessageButton.prototype.subscribeToClickedEvent automaticallyShowInAppMessages destroyFeed hideContentCards showContentCards showFeed showInAppMessage toggleContentCards toggleFeed changeUser destroy getDeviceId initialize isPushBlocked isPushPermissionGranted isPushSupported logCardClick logCardDismissal logCardImpressions logContentCardImpressions logContentCardsDisplayed logCustomEvent logFeedDisplayed logInAppMessageButtonClick logInAppMessageClick logInAppMessageHtmlClick logInAppMessageImpression logPurchase openSession requestPushPermission removeAllSubscriptions removeSubscription requestContentCardsRefresh requestFeedRefresh requestImmediateDataFlush enableSDK isDisabled setLogger setSdkAuthenticationSignature addSdkMetadata disableSDK subscribeToContentCardsUpdates subscribeToFeedUpdates subscribeToInAppMessage subscribeToSdkAuthenticationFailures toggleLogging unregisterPush wipeData handleBrazeAction".split(" "),i=0;i<s.length;i++){for(var m=s[i],k=a.braze,l=m.split("."),j=0;j<l.length-1;j++)k=k[l[j]];k[l[j]]=(new Function("return function "+m.replace(/\./g,"_")+"(){window.brazeQueue.push(arguments); return true}"))()}window.braze.getCachedContentCards=function(){return new window.braze.ContentCards};window.braze.getCachedFeed=function(){return new window.braze.Feed};window.braze.getUser=function(){return new window.braze.User};(y=p.createElement(P)).type='text/javascript';
+		    y.src='https://js.appboycdn.com/web-sdk/4.2/braze.min.js';
+		    y.async=1;(b=p.getElementsByTagName(P)[0]).parentNode.insertBefore(y,b)
+		  }(window,document,'script');
+
+		  	// initialize the SDK
+			braze.initialize('0a278d37-4e4d-4219-8c8c-903c0dafcf0f', {
+			    baseUrl: "sdk.iad-03.braze.com",
+			    enableLogging: true,
+			    sessionTimeoutInSeconds: 900
+			});
+
+			// optionally show all in-app messages without custom handling
+			braze.automaticallyShowInAppMessages();
+
+			// if you use Content Cards
+			braze.subscribeToContentCardsUpdates(function(cards){
+			    // cards have been updated
+			});
+
+			// optionally set the current user's External ID
+			if (isLoggedIn){
+			    braze.changeUser(userIdentifier);
+			}
+
+			// Be sure to call `openSession` after `automaticallyShowInAppMessages`
+			braze.openSession();
+
+			// Push Registration
+			braze.requestPushPermission();
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<p>
+				<h1>Joanna's OKR Project</h1>
+				Braze Web SDK integration with mParticle
+			</p>
+		</div>
+		<div class="body">
+			<br/ >
+			<center>
+				<a href="https://internal-dashboard-03.braze.com/dashboard/app_usage/600284e65602903fd7d253d5?locale=en" target="_blank">Joanna's Dashboard</a>
+			</center>
+			<br />
+			<div id="user">
+				<p><h3>Session Settings</h3></p>
+				<p><label>User ID:</label></p>
+				<p>
+					<input type="text" id="change_userid" name="userid" />
+					<button id="submit_userid">Change User</button>
+				</p>
+			</div>
+			<br />
+			<hr>
+			<div id="customEventLog">
+				<p><h3>Attributes & Events</h3></p>
+				<p><label>Custom Event: </label></p>
+				<p>
+					<input type="text" id="add_customevent" placeholder="Custom Event Name" />
+					<button id="submit_customevent">Add Custom Event</button>
+				</p>
+				<p><label>Custom Attributes: </label></p>
+				<p>
+					<input type="text" id="custom_attribute_name" placeholder="Custom Attribute Name" />
+					<input type="text" id="custom_attribute_value" placeholder="Custom Attribute Value" />
+					<button id="submit_customattribute">Add Custom Attribute</button>
+				</p>
+			</div>
+			<script type="text/javascript" src="app.js"></script>
+		</div>
+	</body>
+	<footer>
+	</footer>
+</html>
